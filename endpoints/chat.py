@@ -42,7 +42,7 @@ async def delete_chat(chat_id: int):
 
 @router.get("/{chat_id}/messages", response_model=list[MessageInDB])
 async def get_last_messages(chat_id: int):
-    message_db = list()
+    message_db = []
     for message in message_database:
         for param, value in message.items():
             if param == "chat_id" and value == chat_id:
@@ -52,9 +52,4 @@ async def get_last_messages(chat_id: int):
 
 @router.get("/active", response_model=list[ChatInDB])
 async def get_active_chats():
-    chats_db = list()
-    for message in message_database:
-        for param, value in message.items():
-            if param == "created_date" and value >= (datetime.date.today() + datetime.timedelta(days=1)):
-                chats_db.append(chat_database[message.chat_id - 1])
-    return chats_db
+    pass
