@@ -9,7 +9,8 @@ import RegisterForm from "@/components/RegisterForm.vue";
   </header>
 
   <main>
-    <RegisterForm />
+    <RouterView />
+
   </main>
 </template>
 
