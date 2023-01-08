@@ -4,12 +4,14 @@ from pydantic import BaseModel
 
 
 class Message(BaseModel):
+    user_id: int
     chat_id: int
-    send_from: str
-    send_to: str
     text: str
+    created_date: datetime
 
 
 class MessageInDB(Message):
     id: int
-    created_date: datetime
+
+    class Config:
+        orm_mode = True

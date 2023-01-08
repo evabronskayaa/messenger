@@ -13,10 +13,10 @@ async def get_message(message_id: int):
 
 @router.post("/", response_model=MessageInDB)
 async def create_message(message: Message):
-    message_db = MessageInDB(chat_id=message.chat_id,
-                             send_from=message.send_from,
-                             send_to=message.send_to,
-                             text=message.text)
+    message_db = MessageInDB(user_id=message.user_id,
+                             chat_id=message.chat_id,
+                             text=message.text,
+                             created_date=message.created_date)
     return message_db
 
 

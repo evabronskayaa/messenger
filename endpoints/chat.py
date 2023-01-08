@@ -22,7 +22,7 @@ async def get_chat(chat_id: int):
 
 @router.post("/", response_model=ChatInDB)
 async def create_chat(chat: Chat):
-    chat_db = ChatInDB(name=chat.name, type=chat.type)
+    chat_db = ChatInDB(name=chat.name, type=chat.type, created_date=chat.created_date)
     return chat_db
 
 

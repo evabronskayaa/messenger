@@ -6,8 +6,11 @@ from pydantic import BaseModel
 class Chat(BaseModel):
     name: str
     type: str
+    created_date: datetime
 
 
 class ChatInDB(Chat):
     id: int
-    created_date: datetime
+
+    class Config:
+        orm_mode = True
