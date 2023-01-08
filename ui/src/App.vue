@@ -1,7 +1,7 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
-import RegisterForm from "@/components/RegisterForm.vue";
+import RegisterForm from "@/components/SignUp/SignUp.vue";
 </script>
 
 <template>
